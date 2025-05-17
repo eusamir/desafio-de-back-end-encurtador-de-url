@@ -20,24 +20,34 @@ import java.util.UUID;
 public class UrlService {
     private final IUrlRepository iUrlRepository;
 
-    public UrlDTO generateShortenUrl(UrlShortenRequestDTO request, HttpServletRequest servletRequest){
+    private void validateRequest(UrlShortenRequestDTO request) {
         if (request == null || request.getUrl() == null || request.getUrl().isBlank()) {
             throw new BadRequestException("A URL original não pode ser nula ou vazia");
         }
+    }
+
+    private String generateUniqueId() {
+        String id;
+        do {
+            id = UUID.randomUUID()
+                    .toString()
+                    .replace("-", "")
+                    .substring(0, 10);
+        } while (iUrlRepository.existsById(id));
+        return id;
+    }
+
+    public UrlDTO generateShortenUrl(UrlShortenRequestDTO request, HttpServletRequest servletRequest){
+        validateRequest(request);
+
 
         try {
-            String id;
-            do {
-                id = UUID.randomUUID()
-                        .toString()
-                        .replace("-", "")
-                        .substring(0, 10);
-            } while (iUrlRepository.existsById(id));
+            String uniqueId = generateUniqueId();
 
             String baseUrl = servletRequest.getRequestURL().toString()
                     .replace(servletRequest.getRequestURI(), "");
 
-            Url url = UrlConverter.toEntity(request, id, baseUrl);
+            Url url = UrlConverter.toEntity(request, uniqueId, baseUrl);
             iUrlRepository.save(url);
 
 
