@@ -10,6 +10,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -85,7 +86,7 @@ public interface IUrlController {
             )
     )
     @PostMapping("/shorten")
-    ResponseEntity<UrlDTO> shortenUrl(@RequestBody UrlShortenRequestDTO request, HttpServletRequest servletRequest);
+    ResponseEntity<UrlDTO> shortenUrl(@Valid @RequestBody UrlShortenRequestDTO request, HttpServletRequest servletRequest);
 
     @Operation(
             summary = "Redirecionar URL encurtada",
