@@ -34,11 +34,12 @@ public class UrlService {
                         .substring(0, 10);
             } while (iUrlRepository.existsById(id));
 
-            Url url = UrlConverter.toEntity(request, id);
-            iUrlRepository.save(url);
-
             String baseUrl = servletRequest.getRequestURL().toString()
                     .replace(servletRequest.getRequestURI(), "");
+
+            Url url = UrlConverter.toEntity(request, id, baseUrl);
+            iUrlRepository.save(url);
+
 
             return UrlConverter.toDto(url, baseUrl);
 
@@ -68,6 +69,7 @@ public class UrlService {
 
         return new UrlStatsDTO(
                 url.getShortenCode(),
+                url.getShortenUrl(),
                 url.getFullUrl(),
                 totalAccesses,
                 averagePerDay

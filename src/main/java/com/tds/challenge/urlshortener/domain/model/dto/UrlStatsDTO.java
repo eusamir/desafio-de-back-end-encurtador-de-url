@@ -11,6 +11,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class UrlStatsDTO {
     private String shortenCode;
+    private String shortUrl;
     private String fullUrl;
     private long totalAccesses;
     private double averageAccessesPerDay;

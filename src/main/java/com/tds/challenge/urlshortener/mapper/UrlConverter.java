@@ -17,9 +17,10 @@ public class UrlConverter {
         );
     }
 
-    public static Url toEntity(UrlShortenRequestDTO dto, String id) {
+    public static Url toEntity(UrlShortenRequestDTO dto, String id, String baseUrl) {
         return Url.builder()
                 .shortenCode(id)
+                .shortenUrl(baseUrl + "/api/v1/" + id)
                 .fullUrl(dto.getUrl())
                 .createdAt(LocalDateTime.now())
                 .accessCount(0)
