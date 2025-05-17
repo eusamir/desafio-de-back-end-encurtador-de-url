@@ -1,4 +1,4 @@
-package com.tds.challenge.urlshortener.controller;
+package com.tds.challenge.urlshortener.controller.docs;
 
 import com.tds.challenge.urlshortener.domain.model.dto.out.UrlDTO;
 import com.tds.challenge.urlshortener.domain.model.dto.in.UrlShortenRequestDTO;

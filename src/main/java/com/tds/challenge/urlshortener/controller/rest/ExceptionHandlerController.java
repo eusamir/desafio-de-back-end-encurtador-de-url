@@ -1,4 +1,4 @@
-package com.tds.challenge.urlshortener.controller;
+package com.tds.challenge.urlshortener.controller.rest;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.tds.challenge.urlshortener.domain.model.ErrorResponse;

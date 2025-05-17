@@ -1,5 +1,6 @@
-package com.tds.challenge.urlshortener.controller;
+package com.tds.challenge.urlshortener.controller.rest;
 
+import com.tds.challenge.urlshortener.controller.docs.IUrlController;
 import com.tds.challenge.urlshortener.domain.model.dto.out.UrlDTO;
 import com.tds.challenge.urlshortener.domain.model.dto.in.UrlShortenRequestDTO;
 import com.tds.challenge.urlshortener.domain.model.dto.out.UrlStatsDTO;
@@ -17,7 +18,7 @@ import java.net.URI;
 @RestController
 @RequestMapping("/api/v1")
 @RequiredArgsConstructor
-public class UrlController implements IUrlController{
+public class UrlController implements IUrlController {
     private final UrlService urlService;
 
     @PostMapping(value = "/shorten")
