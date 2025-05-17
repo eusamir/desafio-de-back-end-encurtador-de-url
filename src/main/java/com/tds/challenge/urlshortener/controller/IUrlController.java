@@ -39,7 +39,51 @@ public interface IUrlController {
                     """)
             )
     )
-    @ApiResponse(responseCode = "400", description = "Requisição inválida")
+    @ApiResponse(
+            responseCode = "400",
+            description = "Requisição inválida",
+            content = @Content(
+                    mediaType = "application/json",
+                    schema = @Schema(
+                            example = """
+                    {
+                      "status": 400,
+                      "message": "A URL original não pode ser nula ou vazia"
+                    }
+                    """
+                    )
+            )
+    )
+    @ApiResponse(
+            responseCode = "404",
+            description = "Requisição inválida",
+            content = @Content(
+                    mediaType = "application/json",
+                    schema = @Schema(
+                            example = """
+                    {
+                      "status": 404,
+                      "message": "Not found"
+                    }
+                    """
+                    )
+            )
+    )
+    @ApiResponse(
+            responseCode = "500",
+            description = "Requisição inválida",
+            content = @Content(
+                    mediaType = "application/json",
+                    schema = @Schema(
+                            example = """
+                    {
+                      "status": 500,
+                      "message": "Internal server error"
+                    }
+                    """
+                    )
+            )
+    )
     @PostMapping("/shorten")
     ResponseEntity<UrlDTO> shortenUrl(@RequestBody UrlShortenRequestDTO request, HttpServletRequest servletRequest);
 
@@ -52,7 +96,36 @@ public interface IUrlController {
             description = "Redirecionamento realizado com sucesso",
             content = @Content
     )
-    @ApiResponse(responseCode = "404", description = "Código de URL não encontrado")
+    @ApiResponse(
+            responseCode = "404",
+            description = "Código de URL não encontrado",
+            content = @Content(
+                    mediaType = "application/json",
+                    schema = @Schema(
+                            example = """
+                    {
+                      "status": 404,
+                      "message": "Not found"
+                    }
+                    """
+                    )
+            )
+    )
+    @ApiResponse(
+            responseCode = "500",
+            description = "Requisição inválida",
+            content = @Content(
+                    mediaType = "application/json",
+                    schema = @Schema(
+                            example = """
+                    {
+                      "status": 500,
+                      "message": "Internal server error"
+                    }
+                    """
+                    )
+            )
+    )
     @GetMapping("/{id}")
     ResponseEntity<Void> redirect(@PathVariable String id);
 
@@ -69,6 +142,7 @@ public interface IUrlController {
                     examples = @ExampleObject(value = """
                         {
                           "shortenCode": "abc123",
+                          "shortUrl": "http://localhost:8080/abc123",
                           "fullUrl": "https://exemplo.com",
                           "totalAccesses": 20,
                           "averagePerDay": 6.6
@@ -76,7 +150,36 @@ public interface IUrlController {
                     """)
             )
     )
-    @ApiResponse(responseCode = "404", description = "Código de URL não encontrado")
+    @ApiResponse(
+            responseCode = "404",
+            description = "Código de URL não encontrado",
+            content = @Content(
+                    mediaType = "application/json",
+                    schema = @Schema(
+                            example = """
+                    {
+                      "status": 404,
+                      "message": "URL não encontrada"
+                    }
+                    """
+                    )
+            )
+    )
+    @ApiResponse(
+            responseCode = "500",
+            description = "Requisição inválida",
+            content = @Content(
+                    mediaType = "application/json",
+                    schema = @Schema(
+                            example = """
+                    {
+                      "status": 500,
+                      "message": "Internal server error"
+                    }
+                    """
+                    )
+            )
+    )
     @GetMapping("/{id}/stats")
     ResponseEntity<UrlStatsDTO> getStats(@PathVariable String id);
 }
