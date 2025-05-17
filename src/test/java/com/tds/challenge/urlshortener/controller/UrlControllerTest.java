@@ -1,8 +1,8 @@
 package com.tds.challenge.urlshortener.controller;
 
-import com.tds.challenge.urlshortener.domain.model.dto.UrlDTO;
-import com.tds.challenge.urlshortener.domain.model.dto.UrlShortenRequestDTO;
-import com.tds.challenge.urlshortener.domain.model.dto.UrlStatsDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.out.UrlDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.in.UrlShortenRequestDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.out.UrlStatsDTO;
 import com.tds.challenge.urlshortener.domain.service.UrlService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

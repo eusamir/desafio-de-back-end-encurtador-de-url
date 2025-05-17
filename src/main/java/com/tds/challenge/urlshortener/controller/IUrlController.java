@@ -1,8 +1,8 @@
 package com.tds.challenge.urlshortener.controller;
 
-import com.tds.challenge.urlshortener.domain.model.dto.UrlDTO;
-import com.tds.challenge.urlshortener.domain.model.dto.UrlShortenRequestDTO;
-import com.tds.challenge.urlshortener.domain.model.dto.UrlStatsDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.out.UrlDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.in.UrlShortenRequestDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.out.UrlStatsDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.ExampleObject;

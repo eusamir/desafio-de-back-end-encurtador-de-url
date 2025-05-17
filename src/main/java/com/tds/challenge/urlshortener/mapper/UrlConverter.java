@@ -1,11 +1,10 @@
 package com.tds.challenge.urlshortener.mapper;
 
-import com.tds.challenge.urlshortener.domain.model.dto.UrlDTO;
-import com.tds.challenge.urlshortener.domain.model.dto.UrlShortenRequestDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.out.UrlDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.in.UrlShortenRequestDTO;
 import com.tds.challenge.urlshortener.domain.model.entity.Url;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public class UrlConverter {
     public static UrlDTO toDto(Url url, String baseUrl) {

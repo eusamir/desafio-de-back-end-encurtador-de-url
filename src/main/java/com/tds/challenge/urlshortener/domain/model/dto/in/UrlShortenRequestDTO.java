@@ -1,4 +1,4 @@
-package com.tds.challenge.urlshortener.domain.model.dto;
+package com.tds.challenge.urlshortener.domain.model.dto.in;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;

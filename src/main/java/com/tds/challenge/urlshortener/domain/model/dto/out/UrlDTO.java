@@ -1,4 +1,4 @@
-package com.tds.challenge.urlshortener.domain.model.dto;
+package com.tds.challenge.urlshortener.domain.model.dto.out;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

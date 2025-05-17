@@ -1,8 +1,8 @@
 package com.tds.challenge.urlshortener.domain.service;
 
-import com.tds.challenge.urlshortener.domain.model.dto.UrlDTO;
-import com.tds.challenge.urlshortener.domain.model.dto.UrlShortenRequestDTO;
-import com.tds.challenge.urlshortener.domain.model.dto.UrlStatsDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.out.UrlDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.in.UrlShortenRequestDTO;
+import com.tds.challenge.urlshortener.domain.model.dto.out.UrlStatsDTO;
 import com.tds.challenge.urlshortener.domain.model.entity.Url;
 import com.tds.challenge.urlshortener.domain.repository.IUrlRepository;
 import com.tds.challenge.urlshortener.suport.expection.BadRequestException;
