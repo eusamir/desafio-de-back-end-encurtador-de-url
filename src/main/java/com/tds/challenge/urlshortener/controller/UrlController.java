@@ -5,6 +5,7 @@ import com.tds.challenge.urlshortener.domain.model.dto.UrlShortenRequestDTO;
 import com.tds.challenge.urlshortener.domain.model.dto.UrlStatsDTO;
 import com.tds.challenge.urlshortener.domain.service.UrlService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -20,7 +21,7 @@ public class UrlController implements IUrlController{
     private final UrlService urlService;
 
     @PostMapping(value = "/shorten")
-    public ResponseEntity<UrlDTO> shortenUrl(@RequestBody UrlShortenRequestDTO request, HttpServletRequest servletRequest) {
+    public ResponseEntity<UrlDTO> shortenUrl(@Valid @RequestBody UrlShortenRequestDTO request, HttpServletRequest servletRequest) {
         UrlDTO urlDTO = urlService.generateShortenUrl(request, servletRequest);
         return ResponseEntity.ok(urlDTO);
     }
