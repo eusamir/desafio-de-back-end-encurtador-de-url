@@ -210,9 +210,3 @@ java -jar target/urlshortener-0.0.1-SNAPSHOT.jar
 ## 📂 Autor
 
 Desenvolvido por Samir Gomes De Araújo Andrade.
-
----
-
-## 📄 Licença
-
-Este projeto está licenciado sob os termos da [MIT License](LICENSE).
