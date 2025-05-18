@@ -33,7 +33,7 @@ public interface IUrlController {
                     examples = @ExampleObject(value = """
                         {
                           "originalUrl": "https://exemplo.com",
-                          "shortUrl": "http://localhost:8080/abc123",
+                          "shortUrl": "http://localhost:8080/api/v1/abc123",
                           "accessCount": 0,
                           "createdAt": "2025-05-17T12:00:00"
                         }
@@ -143,7 +143,7 @@ public interface IUrlController {
                     examples = @ExampleObject(value = """
                         {
                           "shortenCode": "abc123",
-                          "shortUrl": "http://localhost:8080/abc123",
+                          "shortUrl": "http://localhost:8080/api/v1/abc123",
                           "fullUrl": "https://exemplo.com",
                           "totalAccesses": 20,
                           "averagePerDay": 6.6
