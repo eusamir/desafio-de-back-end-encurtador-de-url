@@ -1,4 +1,4 @@
-# 🔗 Desafio encurtador de url para o grupo TDS
+# 🔗 Desafio encurtador de url para a TDS Company.
 
 Projeto de encurtador de URLs desenvolvido em **Java**, com **Spring Boot**, **MongoDB** e **Docker**.
 
@@ -83,10 +83,10 @@ A classe `UrlService` centraliza as regras de negócio.
 - Quantidade de acessos  
 - Datas de criação e último acesso  
 
-### Subindo com Docker Compose:
+### Subindo banco com Docker Compose:
 
 ```bash
-docker-compose up -d
+docker-compose up -d mongodb
 ```
 
 O MongoDB estará disponível na porta padrão: **27017**.
